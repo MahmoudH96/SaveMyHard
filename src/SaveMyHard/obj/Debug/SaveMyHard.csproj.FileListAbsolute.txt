@@ -1,0 +1,13 @@
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\bin\Debug\SaveMyHard.exe.config
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\bin\Debug\SaveMyHard.exe
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\bin\Debug\SaveMyHard.pdb
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.csprojResolveAssemblyReference.cache
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.Properties.Resources.resources
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.csproj.GenerateResource.Cache
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.exe
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.pdb
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.GUIs.Configurations.resources
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\Interop.IWshRuntimeLibrary.dll
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.csproj.ResolveComReference.cache
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\SaveMyHard.GUIs.About.resources
+D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Debug\Interop.Shell32.dll
