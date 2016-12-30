@@ -11,3 +11,16 @@ D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Release\Inte
 D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Release\SaveMyHard.csproj.ResolveComReference.cache
 D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Release\SaveMyHard.GUIs.About.resources
 D:\BeeTronix\Projects\Windows Application\SaveMyHard\SaveMyHard\obj\Release\Interop.Shell32.dll
+F:\C# projects\SaveMyHard\src\SaveMyHard\bin\Release\SaveMyHard.exe.config
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\Interop.IWshRuntimeLibrary.dll
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\Interop.Shell32.dll
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.csproj.ResolveComReference.cache
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.exe
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.pdb
+F:\C# projects\SaveMyHard\src\SaveMyHard\bin\Release\SaveMyHard.exe
+F:\C# projects\SaveMyHard\src\SaveMyHard\bin\Release\SaveMyHard.pdb
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.csprojResolveAssemblyReference.cache
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.GUIs.About.resources
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.GUIs.Configurations.resources
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.Properties.Resources.resources
+F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Release\SaveMyHard.csproj.GenerateResource.Cache
