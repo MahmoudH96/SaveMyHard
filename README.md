@@ -1,4 +1,6 @@
 # SaveMyHard
+[![](https://img.shields.io/badge/Windows-7-blue.svg)]() [![](https://img.shields.io/badge/Windows-8%20%2F%208.1-orange.svg)]() [![](https://img.shields.io/badge/Windows-10-lightgrey.svg)]()
+
 Small utility to protect your hard disks from being formatted accidentally.
 
 # Installing
