@@ -1,12 +1,7 @@
 ﻿using IWshRuntimeLibrary;
-using Shell32;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SaveMyHard
 {
@@ -67,27 +62,7 @@ namespace SaveMyHard
         public const string ShortcutFileDescription = "Save my hard";
 
 
-        /// <summary>
-        /// Used to get the target path for a shortcut file
-        /// </summary>
-        /// <param name="shortcutFilename"></param>
-        /// <returns></returns>
-        public static string GetShortcutTargetFile(string shortcutFilename)
-        {
-            string pathOnly = System.IO.Path.GetDirectoryName(shortcutFilename);
-            string filenameOnly = System.IO.Path.GetFileName(shortcutFilename);
-
-            Shell shell = new Shell();
-            Shell32.Folder folder = shell.NameSpace(pathOnly);
-            FolderItem folderItem = folder.ParseName(filenameOnly);
-            if (folderItem != null)
-            {
-                Shell32.ShellLinkObject link = (Shell32.ShellLinkObject)folderItem.GetLink;
-                return link.Path;
-            }
-
-            return string.Empty;
-        }
+       
 
         /// <summary>
         /// Used to add the program into startup list
@@ -129,18 +104,7 @@ namespace SaveMyHard
             {
                 return true;
             }
-
-            //Check other shortcuts targets
-            bool isExist = false;
-            foreach (var file in startupFilesList)
-            {
-                if (GetShortcutTargetFile(file) == System.Reflection.Assembly.GetExecutingAssembly().Location)
-                {
-                    isExist = true;
-                    break;
-                }
-            }
-            return isExist;
+            return false;
         }
         #endregion
     }

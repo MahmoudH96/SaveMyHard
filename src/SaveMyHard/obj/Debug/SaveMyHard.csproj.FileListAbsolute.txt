@@ -24,3 +24,5 @@ F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Debug\SaveMyHard.GUIs.About.resourc
 F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Debug\SaveMyHard.GUIs.Configurations.resources
 F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Debug\SaveMyHard.Properties.Resources.resources
 F:\C# projects\SaveMyHard\src\SaveMyHard\obj\Debug\SaveMyHard.csproj.GenerateResource.Cache
+F:\C# projects\SaveMyHard\src\SaveMyHard\bin\Debug\Interop.IWshRuntimeLibrary.dll
+F:\C# projects\SaveMyHard\src\SaveMyHard\bin\Debug\Interop.Shell32.dll
