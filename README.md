@@ -12,7 +12,7 @@ You can easily install the program on your pc by downloading the lastest release
 
 # Screenshots
 
-[![ConfigurationWindow](./docs/ConfigurationsWindow.PNG)]
+![ConfigurationWindow](./docs/ConfigurationsWindow.PNG)
 
 # Motivation
 
