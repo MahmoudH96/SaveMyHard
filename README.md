@@ -4,9 +4,12 @@
 Small utility to protect your hard disks from being formatted accidentally.
 
 # Installing
-You can easily install the program on your pc by downloading setup file.
 
-[![Release](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)](https://github.com/MahmoudH96/SaveMyHard/raw/master/Save%20my%20hard%20setup.exe)
+You can easily install the program on your pc by downloading the lastest release version.
+
+[![](https://img.shields.io/badge/Release-v1.0.0-blue.svg)](https://github.com/MahmoudH96/SaveMyHard/releases/latest)
+
+
 
 # Motivation
 This project was made after i had formatted my external hard disk accidentally (I thought that it was my flash disk) , so I want to save other's from doing this mistake.
