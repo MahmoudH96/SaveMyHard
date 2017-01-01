@@ -1,5 +1,8 @@
 ﻿using IWshRuntimeLibrary;
+using SaveMyHard.Util;
 using System;
+using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 
@@ -7,6 +10,54 @@ namespace SaveMyHard
 {
     public static class Tools
     {
+
+        #region Font Tools
+
+        #region Fonts
+        /// <summary>
+        /// Font Lists:
+        /// 0-OpenSans Regular
+        /// 1-OpenSans Semibold
+        /// </summary>
+        internal static PrivateFontCollection Fonts = new PrivateFontCollection();
+
+        #endregion
+
+
+        /// <summary>
+        /// Used to load Fonts into Static Fields from embedded resources
+        /// http://stackoverflow.com/questions/556147/how-to-quickly-and-easily-embed-fonts-in-winforms-app-in-c-sharp
+        /// </summary>
+        internal static void LoadFontsFromResources()
+        {
+
+            byte[] fontData;
+            IntPtr fontPtr;
+            uint dummy = 0;
+
+            #region Load OpenSans Regular
+
+            fontData = Properties.Resources.OpenSans_Regular;
+            fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            Fonts.AddMemoryFont(fontPtr, Properties.Resources.OpenSans_Regular.Length);
+            NativeMethods.AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.OpenSans_Regular.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+            
+            #endregion
+
+            #region Load OpenSans Semibold
+
+            fontData = Properties.Resources.OpenSans_Semibold;
+            fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            Fonts.AddMemoryFont(fontPtr, Properties.Resources.OpenSans_Semibold.Length);
+            NativeMethods.AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.OpenSans_Semibold.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+            
+            #endregion
+        }
+        #endregion
 
         #region Driver Tools
         public static DriveInfo GetDriverInfoFromTitle(String windowTitle)
@@ -62,7 +113,7 @@ namespace SaveMyHard
         public const string ShortcutFileDescription = "Save my hard";
 
 
-       
+
 
         /// <summary>
         /// Used to add the program into startup list

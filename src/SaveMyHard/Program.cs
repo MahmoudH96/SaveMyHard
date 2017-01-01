@@ -32,6 +32,7 @@ namespace SaveMyHard
                 }
                 Application.EnableVisualStyles();
                 Application.ThreadException += Application_ThreadException;
+                Tools.LoadFontsFromResources();
                 Application.Run(new TaskTrayApplicationContext());
             }
 

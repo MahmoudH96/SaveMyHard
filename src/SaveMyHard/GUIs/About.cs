@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace SaveMyHard.GUIs
 {
@@ -12,6 +13,22 @@ namespace SaveMyHard.GUIs
         public About()
         {
             InitializeComponent();
+
+            #region Set Fonts
+            lab_Title.Font = new Font(Tools.Fonts.Families[1], 14.0F);
+
+            Font defaultFont = new Font(Tools.Fonts.Families[0], 10.0F);
+
+            Font subFont = new Font(Tools.Fonts.Families[0], 8.0F);
+
+            lab_Dev.Font = defaultFont;
+            link_Dev.Font = defaultFont;
+
+            link_GitHub.Font = defaultFont;
+
+            link_MIT.Font = subFont;
+
+            #endregion
         }
 
         #endregion

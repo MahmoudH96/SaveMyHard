@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SaveMyHard.GUIs
@@ -33,6 +34,26 @@ namespace SaveMyHard.GUIs
         public Configurations()
         {
             InitializeComponent();
+
+            #region Set Fonts
+            lab_Title.Font = new Font(Tools.Fonts.Families[1], 14.0F);
+
+            Font defaultFont = new Font(Tools.Fonts.Families[0], 10.0F);
+
+            Font subFont = new Font(Tools.Fonts.Families[0], 8.0F);
+
+            chk_EnableProtection.Font = defaultFont;
+            chk_DisplayNotification.Font = defaultFont;
+            chk_Startup.Font = defaultFont;
+
+            rad_DisableAll.Font = defaultFont;
+            rad_DisableSize.Font = defaultFont;
+
+            num_Size.Font = defaultFont;
+
+            lab_SizeUnit.Font = subFont;
+
+            #endregion
         }
         #endregion
 
@@ -62,16 +83,11 @@ namespace SaveMyHard.GUIs
         /// <param name="isEnable"></param>
         private void SetProtection(bool isEnable)
         {
+            Properties.Settings.Default.Protection = isEnable;
+            Protection(isEnable);
             if (isEnable)
             {
-                Properties.Settings.Default.Protection = isEnable;
-                Protection(isEnable);
                 LoadInitialSettings();
-            }
-            else
-            {
-                Properties.Settings.Default.Protection = isEnable;
-                Protection(isEnable);
             }
             TaskTrayApplicationContext.DisplayProtectionNotification?.Invoke(isEnable);
         }
@@ -87,7 +103,7 @@ namespace SaveMyHard.GUIs
                 //Set resource file
                 Properties.Settings.Default.DisableType = DisableStatus.All;
                 //Set the GUI
-                num_Size.Enabled = false;
+                num_Size.Enabled = !isEnable;
             }
         }
 
@@ -103,7 +119,7 @@ namespace SaveMyHard.GUIs
                 Properties.Settings.Default.DisableType = DisableStatus.Size;
 
                 //Set the GUI
-                num_Size.Enabled = true;
+                num_Size.Enabled = isEnable;
             }
         }
 
@@ -151,16 +167,8 @@ namespace SaveMyHard.GUIs
         /// </summary>
         private void Protection(bool isEnable)
         {
-            if (isEnable)
-            {
-                chk_EnableProtection.Checked = isEnable;
-                grpBox_Protection.Enabled = isEnable;
-            }
-            else
-            {
-                chk_EnableProtection.Checked = isEnable;
-                grpBox_Protection.Enabled = isEnable;
-            }
+            chk_EnableProtection.Checked = isEnable;
+            grpBox_Protection.Enabled = isEnable;
         }
 
         /// <summary>
@@ -190,7 +198,7 @@ namespace SaveMyHard.GUIs
             SaveMyHard.Properties.Settings.Default.DisplayNotification = chk_DisplayNotification.Checked;
             Properties.Settings.Default.Save();
         }
-        
+
         #endregion
     }
 }

@@ -62,7 +62,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskTrayApplicationContext.cs" />
-    <Compile Include="Tools.cs" />
+    <Compile Include="Util\NativeMethods.cs" />
+    <Compile Include="Util\Tools.cs" />
     <EmbeddedResource Include="GUIs\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +94,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\OpenSans-Regular.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Semibold.ttf" />
     <None Include="Resources\SaveMyHard.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -1,3 +1,4 @@
+using SaveMyHard.Util;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -98,7 +99,7 @@ namespace SaveMyHard
             ConfigWindow = new GUIs.Configurations();
             ConfigWindow.RunAtStartup = isAppAtStartup;
             ConfigWindow.LoadInitialSettings();
-            
+
             #endregion
 
             TrayIcon = new NotifyIcon();
@@ -110,7 +111,7 @@ namespace SaveMyHard
             TrayIcon.Visible = true;
             //Register the Static event
             DisplayProtectionNotification = new Action<bool>(DisplayNotification);
-            
+
             #endregion
 
             DisplayNotification(Properties.Settings.Default.Protection);
@@ -118,8 +119,8 @@ namespace SaveMyHard
             #region Register monitoring events
 
             dele = new WinEventDelegate(WinEventProc);
-            IntPtr m_hhook = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
-            
+            IntPtr m_hhook = NativeMethods.SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
+
             #endregion
         }
 
@@ -128,21 +129,9 @@ namespace SaveMyHard
         #region Methods
 
         #region Native Methods From user32.dll and support methods
-        
+
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
-
-        [DllImport("user32.dll")]
-        static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll")]
-        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
-
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(int hWnd, uint Msg, int wParam, int lParam);
-
-        [DllImport("user32.dll")]
-        static extern IntPtr SetWinEventHook(uint eventMin, uint eventMax, IntPtr hmodWinEventProc, WinEventDelegate lpfnWinEventProc, uint idProcess, uint idThread, uint dwFlags);
 
         #endregion
 
@@ -155,9 +144,9 @@ namespace SaveMyHard
             const int nChars = 256;
             IntPtr handle = IntPtr.Zero;
             StringBuilder Buff = new StringBuilder(nChars);
-            handle = GetForegroundWindow();
+            handle = NativeMethods.GetForegroundWindow();
 
-            if (GetWindowText(handle, Buff, nChars) > 0)
+            if (NativeMethods.GetWindowText(handle, Buff, nChars) > 0)
             {
                 return Buff.ToString();
             }
@@ -226,7 +215,7 @@ namespace SaveMyHard
                 return;
             PreviousWindowPointer = hWindow;
             //Send close message to hWindow
-            SendMessage((int)hWindow, WM_SYSCOMMAND, SC_CLOSE, 0);
+            NativeMethods.SendMessage((int)hWindow, WM_SYSCOMMAND, SC_CLOSE, 0);
             MessageBox.Show("Attention , You are trying to format a forbidden Driver ! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
